@@ -41,8 +41,20 @@ class Router
     public function dispatch()
     {
         $method = $_SERVER['REQUEST_METHOD'];
-        // Limpiamos la URI de parámetros GET y quitamos / public si está presente
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        
+        // Ajustar URI para subdirectorios (como /prueba_tecnica/)
+        $scriptPath = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+        $basePath = rtrim($scriptPath, '/public'); // Quitamos /public del path
+        
+        if ($basePath !== '' && $basePath !== '/') {
+            $uri = substr($uri, strlen($basePath));
+        }
+
+        $uri = empty($uri) ? '/' : $uri;
+        if ($uri !== '/' && substr($uri, -1) === '/') {
+            $uri = rtrim($uri, '/');
+        }
         
         // Manejo básico de rutas dinámicas {id}
         foreach ($this->routes[$method] as $path => $callback) {
