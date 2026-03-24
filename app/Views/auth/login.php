@@ -2,7 +2,15 @@
     <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-lock"></i> Iniciar Sesión</h2>
 
     <?php if (isset($error)): ?>
-        <div class="alert alert-error" style="margin-bottom: 1.5rem;"><i class="fas fa-exclamation-circle"></i> <?= $error ?></div>
+        <script>
+            window.onload = function() {
+                showModal(
+                    'Error de Acceso', 
+                    'Usuario o contraseña incorrectos. Por favor, verifique sus datos y vuelva a intentarlo.',
+                    function() { closeModal(); }
+                );
+            };
+        </script>
     <?php endif; ?>
 
     <div class="form-group">
