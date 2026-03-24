@@ -37,8 +37,8 @@
 
         .form-group { margin-bottom: 1.5rem; }
         label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #4a5568; }
-        input[type="text"], select, textarea { width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; font-size: 1rem; outline: none; transition: border-color 0.2s; }
-        input[type="text"]:focus, select:focus, textarea:focus { border-color: #3498db; }
+        input[type="text"], input[type="password"], select, textarea { width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+        input[type="text"]:focus, input[type="password"]:focus, select:focus, textarea:focus { border-color: #3498db; }
 
         .search-container { position: relative; margin-bottom: 2rem; }
         .search-container input { padding-left: 40px; }
