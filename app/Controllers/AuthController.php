@@ -35,7 +35,7 @@ class AuthController extends Controller
     {
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
-bit
+
         // Credenciales hardcodeadas según requerimiento
         if ($username === 'admin' && $password === 'kawak2024') {
             Session::set('user', $username);
