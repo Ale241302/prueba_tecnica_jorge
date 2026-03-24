@@ -56,6 +56,44 @@ class Session
     }
 
     /**
+     * Establece un mensaje flash (disponible solo para la siguiente carga).
+     * 
+     * @param string $key Clave del mensaje.
+     * @param mixed $value Valor a guardar.
+     */
+    public static function flash(string $key, $value)
+    {
+        self::start();
+        $_SESSION['_flash'][$key] = $value;
+    }
+
+    /**
+     * Obtiene y elimina un mensaje flash.
+     * 
+     * @param string $key Clave del mensaje.
+     * @return mixed|null
+     */
+    public static function getFlash(string $key)
+    {
+        self::start();
+        $value = $_SESSION['_flash'][$key] ?? null;
+        unset($_SESSION['_flash'][$key]);
+        return $value;
+    }
+
+    /**
+     * Verifica si existe un mensaje flash.
+     * 
+     * @param string $key Clave del mensaje.
+     * @return bool
+     */
+    public static function hasFlash(string $key): bool
+    {
+        self::start();
+        return isset($_SESSION['_flash'][$key]);
+    }
+
+    /**
      * Destruye la sesión actual.
      * 
      * @return void

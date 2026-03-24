@@ -21,7 +21,9 @@ class AuthController extends Controller
         if (Session::isLoggedIn()) {
             return $this->redirect('/documentos');
         }
-        return $this->render('auth/login');
+        
+        $error = Session::getFlash('error');
+        return $this->render('auth/login', ['error' => $error]);
     }
 
     /**
@@ -33,13 +35,14 @@ class AuthController extends Controller
     {
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
-
+bit
         // Credenciales hardcodeadas según requerimiento
         if ($username === 'admin' && $password === 'kawak2024') {
             Session::set('user', $username);
             return $this->redirect('/documentos');
         } else {
-            return $this->render('auth/login', ['error' => 'Usuario o contraseña incorrectos']);
+            Session::flash('error', 'Usuario o contraseña incorrectos');
+            return $this->redirect('/login');
         }
     }
 
