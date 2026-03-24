@@ -5,6 +5,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\Core\Session;
 Session::start();
 
+use App\Core\Database;
+use App\Core\Router;
+use App\Controllers\AuthController;
+use App\Controllers\DocumentController;
+
 // Cargar variables de entorno si existe el archivo .env
 if (file_exists(__DIR__ . '/../.env')) {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
