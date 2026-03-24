@@ -1,6 +1,6 @@
 <h2>Crear Nuevo Documento</h2>
 
-<form action="/documentos/crear" method="POST">
+<form action="<?= BASE_URL ?>/documentos/crear" method="POST">
     <div class="form-group">
         <label for="DOC_NOMBRE">Nombre del Documento</label>
         <input type="text" name="DOC_NOMBRE" id="DOC_NOMBRE" required maxlength="255">
@@ -33,6 +33,6 @@
 
     <div style="margin-top: 2rem;">
         <button type="submit" class="btn btn-success">Guardar Documento</button>
-        <a href="/documentos" class="btn btn-primary" style="background-color: #7f8c8d;">Cancelar</a>
+        <a href="<?= BASE_URL ?>/documentos" class="btn btn-primary" style="background-color: #7f8c8d;">Cancelar</a>
     </div>
 </form>

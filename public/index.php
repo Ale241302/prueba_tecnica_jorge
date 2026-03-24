@@ -25,6 +25,11 @@ $config = [
 // Inicializar la conexión a la base de datos (Eloquent)
 Database::init($config);
 
+// Definir BASE_URL para manejar redirecciones y links en subdirectorios
+$scriptPath = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+$baseUrl = rtrim($scriptPath, '/public');
+define('BASE_URL', $baseUrl);
+
 // Inicializar el Router
 $router = new Router();
 

@@ -1,6 +1,6 @@
 <h2>Editar Documento: <?= htmlspecialchars($document->DOC_CODIGO) ?></h2>
 
-<form action="/documentos/editar/<?= $document->DOC_ID ?>" method="POST">
+<form action="<?= BASE_URL ?>/documentos/editar/<?= $document->DOC_ID ?>" method="POST">
     <div class="form-group">
         <label for="DOC_NOMBRE">Nombre del Documento</label>
         <input type="text" name="DOC_NOMBRE" id="DOC_NOMBRE" required maxlength="255" value="<?= htmlspecialchars($document->DOC_NOMBRE) ?>">
@@ -35,6 +35,6 @@
 
     <div style="margin-top: 2rem;">
         <button type="submit" class="btn btn-success">Actualizar Documento</button>
-        <a href="/documentos" class="btn btn-primary" style="background-color: #7f8c8d;">Cancelar</a>
+        <a href="<?= BASE_URL ?>/documentos" class="btn btn-primary" style="background-color: #7f8c8d;">Cancelar</a>
     </div>
 </form>

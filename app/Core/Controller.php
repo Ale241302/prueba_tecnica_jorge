@@ -38,7 +38,8 @@ abstract class Controller
      */
     protected function redirect(string $url)
     {
-        header("Location: {$url}");
+        $target = BASE_URL . $url;
+        header("Location: {$target}");
         exit;
     }
 }
