@@ -3,8 +3,8 @@
     "description": "CRUD de Registro de Documentos - Prueba Técnica KAWAK",
     "type": "project",
     "require": {
-        "php": ">=7.4",
-        "illuminate/database": "^9.0",
+        "php": ">=7.2",
+        "illuminate/database": "^6.0",
         "vlucas/phpdotenv": "^5.0"
     },
     "autoload": {
