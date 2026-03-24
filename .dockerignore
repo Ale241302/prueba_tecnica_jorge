@@ -1,0 +1,8 @@
+.git
+.env
+vendor
+composer.lock
+Dockerfile
+docker-compose.yml
+node_modules
+.htaccess
