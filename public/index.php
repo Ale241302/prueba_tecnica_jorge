@@ -8,8 +8,19 @@ use App\Controllers\DocumentController;
 // Cargar el autoloader de Composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// Cargar variables de entorno si existe el archivo .env
+if (file_exists(__DIR__ . '/../.env')) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv->load();
+}
+
 // Cargar la configuración de la base de datos
-$config = require_once __DIR__ . '/../config/database.php';
+$config = [
+    'host'     => $_ENV['DB_HOST'] ?? 'localhost',
+    'database' => $_ENV['DB_DATABASE'] ?? 'prueba_tecnica_jorge',
+    'username' => $_ENV['DB_USERNAME'] ?? 'root',
+    'password' => $_ENV['DB_PASSWORD'] ?? '',
+];
 
 // Inicializar la conexión a la base de datos (Eloquent)
 Database::init($config);
