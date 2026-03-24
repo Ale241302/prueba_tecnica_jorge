@@ -1,13 +1,15 @@
 <form action="<?= BASE_URL ?>/login" method="POST" style="max-width: 400px; margin: 0 auto; padding: 1rem;">
-    <h2 style="text-align: center; margin-bottom: 2rem;"><i class="fas fa-lock"></i> Iniciar Sesión</h2>
+    <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50"><i class="fas fa-lock"></i> Iniciar Sesión</h2>
 
     <?php if (isset($error)): ?>
         <script>
             window.onload = function() {
                 showModal(
-                    'Error de Acceso', 
+                    'Error de Acceso',
                     'Usuario o contraseña incorrectos. Por favor, verifique sus datos y vuelva a intentarlo.',
-                    function() { closeModal(); }
+                    function() {
+                        closeModal();
+                    }
                 );
             };
         </script>
@@ -37,7 +39,7 @@
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#password');
 
-    togglePassword.addEventListener('click', function (e) {
+    togglePassword.addEventListener('click', function(e) {
         // toggle the type attribute
         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
         password.setAttribute('type', type);
