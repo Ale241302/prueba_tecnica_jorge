@@ -1,9 +1,9 @@
 <div style="display: flex; justify-content: space-between; align-items: center;">
     <h2>Listado de Documentos</h2>
-    <a href="/documentos/crear" class="btn btn-success">Nuevo Documento</a>
+    <a href="<?= BASE_URL ?>/documentos/crear" class="btn btn-success">Nuevo Documento</a>
 </div>
 
-<form action="/documentos" method="GET" class="search-container">
+<form action="<?= BASE_URL ?>/documentos" method="GET" class="search-container">
     <input type="text" name="search" placeholder="Buscar por nombre o código..." value="<?= htmlspecialchars($search) ?>">
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
@@ -31,8 +31,8 @@
                     <td><?= htmlspecialchars($doc->type->TIP_NOMBRE) ?></td>
                     <td><?= htmlspecialchars($doc->process->PRO_NOMBRE) ?></td>
                     <td>
-                        <a href="/documentos/editar/<?= $doc->DOC_ID ?>" class="btn btn-warning">Editar</a>
-                        <form action="/documentos/eliminar/<?= $doc->DOC_ID ?>" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este documento?')">
+                        <a href="<?= BASE_URL ?>/documentos/editar/<?= $doc->DOC_ID ?>" class="btn btn-warning">Editar</a>
+                        <form action="<?= BASE_URL ?>/documentos/eliminar/<?= $doc->DOC_ID ?>" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este documento?')">
                             <button type="submit" class="btn btn-danger">Eliminar</button>
                         </form>
                     </td>

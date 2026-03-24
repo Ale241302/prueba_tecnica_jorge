@@ -38,8 +38,8 @@
 <?php if (\App\Core\Session::isLoggedIn()): ?>
 <nav>
     <span>Bienvenido, <strong><?= \App\Core\Session::get('user') ?></strong></span>
-    <a href="/documentos">Documentos</a>
-    <a href="/logout">Cerrar Sesión</a>
+    <a href="<?= BASE_URL ?>/documentos">Documentos</a>
+    <a href="<?= BASE_URL ?>/logout">Cerrar Sesión</a>
 </nav>
 <?php endif; ?>
 

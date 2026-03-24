@@ -1,3 +1,4 @@
+SET NAMES utf8mb4;
 USE prueba_tecnica_jorge;
 
 -- Datos precargados para PRO_PROCESO

@@ -4,7 +4,7 @@
     <div class="alert alert-error"><?= $error ?></div>
 <?php endif; ?>
 
-<form action="/login" method="POST">
+<form action="<?= BASE_URL ?>/login" method="POST">
     <div class="form-group">
         <label for="username">Usuario</label>
         <input type="text" name="username" id="username" required>
